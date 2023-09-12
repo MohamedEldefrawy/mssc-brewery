@@ -27,4 +27,10 @@ public class BeerServiceImpl implements BeerService {
     log.debug("Updating....");
     return BeerDto.builder().id(uuid).beerName(beerDto.getBeerName()).build();
   }
+
+  @Override
+  public BeerDto delete(UUID beerId) {
+    log.debug("Updating....");
+    return BeerDto.builder().beerName("Deleted Beer").id(beerId).build();
+  }
 }
