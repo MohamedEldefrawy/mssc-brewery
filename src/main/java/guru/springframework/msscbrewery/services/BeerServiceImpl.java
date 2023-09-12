@@ -5,9 +5,6 @@ import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by jt on 2019-04-20.
- */
 @Service
 @Slf4j
 public class BeerServiceImpl implements BeerService {
@@ -23,5 +20,11 @@ public class BeerServiceImpl implements BeerService {
   public BeerDto create(BeerDto beerDto) {
     log.debug("Creating....");
     return BeerDto.builder().id(UUID.randomUUID()).beerName(beerDto.getBeerName()).build();
+  }
+
+  @Override
+  public BeerDto update(UUID uuid, BeerDto beerDto) {
+    log.debug("Updating....");
+    return BeerDto.builder().id(uuid).beerName(beerDto.getBeerName()).build();
   }
 }
