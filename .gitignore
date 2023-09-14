@@ -149,3 +149,5 @@ Desktop.ini
 /target/mssc-brewery-0.0.1-SNAPSHOT.jar.original
 /target/maven-archiver/pom.properties
 /target/surefire-reports/TEST-guru.springframework.msscbrewery.MsscBreweryApplicationTests.xml
+/target/surefire-reports/guru.springframework.msscbrewery.web.controller.BeerControllerTest.txt
+/target/surefire-reports/TEST-guru.springframework.msscbrewery.web.controller.BeerControllerTest.xml

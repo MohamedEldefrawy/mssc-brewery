@@ -1,7 +1,9 @@
 package guru.springframework.msscbrewery.web.controller;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -45,6 +47,17 @@ public class BeerControllerTest {
     given(beerService.create(beerDto)).willReturn(createdBeer);
     mockMvc.perform(post("/api/v1/beer/").contentType(MediaType.APPLICATION_JSON).content(beerDtoToJson))
         .andExpect(status().isCreated());
+  }
+
+  @Test
+  public void updateBeer_takeIdAndBeerDto_returnOk() throws Exception {
+    BeerDto beerDto = beer;
+    beerDto.setId(UUID.randomUUID());
+    String beerDtoToJson = this.objectMapper.writeValueAsString(beerDto);
+    beer.setBeerName("updated beer");
+    given(beerService.update(any(), any())).willReturn(beer);
+    mockMvc.perform(put("/api/v1/beer/" + beer.getId()).contentType(MediaType.APPLICATION_JSON).content(beerDtoToJson))
+        .andExpect(status().isNoContent());
   }
 
 }

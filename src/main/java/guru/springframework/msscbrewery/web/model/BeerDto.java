@@ -1,5 +1,6 @@
 package guru.springframework.msscbrewery.web.model;
 
+import io.micrometer.core.lang.Nullable;
 import java.util.UUID;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
@@ -17,7 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class BeerDto {
-  @Null
+  @Nullable
   private UUID id;
   @NotBlank
   private String beerName;
