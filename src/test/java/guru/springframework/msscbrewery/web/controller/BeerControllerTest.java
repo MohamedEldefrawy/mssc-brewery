@@ -50,6 +50,12 @@ public class BeerControllerTest {
   }
 
   @Test
+  public void createBeer_returnBadRequest() throws Exception {
+    mockMvc.perform(post("/api/v1/beer/").contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isBadRequest());
+  }
+
+  @Test
   public void updateBeer_takeIdAndBeerDto_returnOk() throws Exception {
     BeerDto beerDto = beer;
     beerDto.setId(UUID.randomUUID());
@@ -58,6 +64,12 @@ public class BeerControllerTest {
     given(beerService.update(any(), any())).willReturn(beer);
     mockMvc.perform(put("/api/v1/beer/" + beer.getId()).contentType(MediaType.APPLICATION_JSON).content(beerDtoToJson))
         .andExpect(status().isNoContent());
+  }
+
+  @Test
+  public void updateBeer_takeId_returnBadRequest() throws Exception {
+    mockMvc.perform(put("/api/v1/beer/" + beer.getId()).contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isBadRequest());
   }
 
 }
