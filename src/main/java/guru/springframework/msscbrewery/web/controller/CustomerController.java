@@ -50,13 +50,4 @@ public class CustomerController {
     if (deletedCustomer != null) {return new ResponseEntity<>(HttpStatus.NO_CONTENT);}
     return new ResponseEntity<>("Couldn't delete customer with ID: " + customerId.toString(), HttpStatus.BAD_REQUEST);
   }
-
-  @ExceptionHandler(ConstraintViolationException.class)
-  ResponseEntity<List<String>> validationExceptionHandler(ConstraintViolationException e) {
-    List<String> errors = new ArrayList<>(e.getConstraintViolations().size());
-
-    e.getConstraintViolations().forEach(x -> errors.add(x.getPropertyPath() + ": " + x.getMessage()));
-
-    return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
-  }
 }
