@@ -139,15 +139,4 @@ Desktop.ini
 ######################
 .eslintcache
 /.idea/
-
-/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
-/target/classes/application.properties
-/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
-/target/surefire-reports/guru.springframework.msscbrewery.MsscBreweryApplicationTests.txt
-/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
-/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
-/target/mssc-brewery-0.0.1-SNAPSHOT.jar.original
-/target/maven-archiver/pom.properties
-/target/surefire-reports/TEST-guru.springframework.msscbrewery.MsscBreweryApplicationTests.xml
-/target/surefire-reports/guru.springframework.msscbrewery.web.controller.BeerControllerTest.txt
-/target/surefire-reports/TEST-guru.springframework.msscbrewery.web.controller.BeerControllerTest.xml
+/target/
